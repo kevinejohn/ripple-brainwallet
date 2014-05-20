@@ -1,3 +1,6 @@
+# WARNING! DO NOT USE. The code has not been tested
+
+
 ### Encrypt
 node brainwallet.js encrypt shQWSd6rSGXeGxhrL2CS9VVAeTJrN
 
