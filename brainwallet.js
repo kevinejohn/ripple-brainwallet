@@ -1,28 +1,45 @@
-var mn = require('./mnemonic');
+var mn = require('./lib/mnemonic');
 
-if (process.argv && process.argv.length === 4) {
-  var option = process.argv[2];
-  var param = process.argv[3];
+/**
+ * Encrypt a secret
+ *
+ * @param {String} secret
+ * @return {String} words
+ */
 
-  var result;
-
-  if (option === 'decrypt') {
-    // Decrypt
-
-    // TODO: Check for 18 words and validate resulting secret
-    // Slice last 3 padded characters
-    result = new Buffer(mn.decode(param), 'hex').toString('base64').slice(0,-3);
-  }
-  else {
-    // Encrypt
-
-    // TODO: Validate secret
-    // Pad secret (Add 3 arbitrary characters) to get 32 characters
-    result = mn.encode(new Buffer(param+'FFF', 'base64').toString('hex'));
+module.exports.encrypt = function(secret) {
+  if (typeof secret !== 'string') {
+    throw new Error('Secret missing');
   }
 
-  console.log(result);
-}
-else {
-  console.log('Example: \nnode ' + process.argv[1] + ' decrypt \"true completely happen mean window gift tremble girlfriend ugly victim finger release early prove bullet chin strain relationship\"');
-}
+  // TODO: Validate secret
+  // Pad secret (Add 3 arbitrary characters) to get 32 characters
+
+  return mn.encode(new Buffer(secret + 'FFF', 'base64').toString('hex'));
+};
+
+/**
+ * Decrypt brainwallet
+ *
+ * @param {String|Array} words
+ * @return {String} secret
+ */
+
+module.exports.decrypt = function(arg0) {
+  var words = [ ];
+
+  if (Array.isArray(arg0)) {
+    words = arg0;
+  } else if (arguments.length === 18) {
+    words = Array.prototype.slice.call(arguments);
+  } else {
+    words = arg0.split(/\s/g);
+  }
+
+  if (words.length !== 18) {
+    throw new Error('Less than 18 words supplied to decrypt');
+  }
+
+  // Slice last 3 padded characters
+  return new Buffer(mn.decode(words.join(' ')), 'hex').toString('base64').slice(0,-3);
+};
