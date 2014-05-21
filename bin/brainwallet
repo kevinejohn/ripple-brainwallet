@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+var brainwallet = require('../brainwallet');
+
+function printUsage() {
+  console.log('Example: \nnode ' + process.argv[1] + ' decrypt true completely happen mean window gift tremble girlfriend ugly victim finger release early prove bullet chin strain relationship');
+  process.exit(1);
+};
+
+if (process.argv.length < 4) {
+  printUsage();
+}
+
+var option = process.argv[2];
+var param = process.argv.slice(3).join(' ');
+var result;
+
+switch (option) {
+  case 'decrypt':
+  case '--decrypt':
+  case '-d':
+    // Decrypt
+
+    // TODO: Check for 18 words and validate resulting secret
+    // Slice last 3 padded characters
+    result = brainwallet.decrypt(param);
+    break;
+
+  case 'encrypt':
+  case '--encrypt':
+  case '-e':
+    // Encrypt
+
+    // TODO: Validate secret
+    // Pad secret (Add 3 arbitrary characters) to get 32 characters
+    result = brainwallet.encrypt(param);
+    break;
+
+  default:
+    printUsage();
+}
+
+console.log(result);
