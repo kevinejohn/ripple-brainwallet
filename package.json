@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "description": "Brain wallet for Ripple secrets",
   "main": "brainwallet.js",
+  "bin": {
+    "brainwallet": "./bin/brainwallet"
+  },
   "scripts": {
-    "test": "node_modules/.bin/mocha --reporter spec test/*-test.js"
+    "test": "./node_modules/.bin/mocha --reporter spec test/*-test.js"
   },
   "repository": {
     "type": "git",
