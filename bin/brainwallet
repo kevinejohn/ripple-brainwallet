@@ -3,7 +3,7 @@
 var brainwallet = require('../brainwallet');
 
 function printUsage() {
-  console.log('Example: \nnode ' + process.argv[1] + ' decrypt true completely happen mean window gift tremble girlfriend ugly victim finger release early prove bullet chin strain relationship');
+  console.log('Example: \nnode ' + process.argv[1] + ' \"decrypt true completely happen mean window gift tremble girlfriend ugly victim finger release early prove bullet chin strain relationship\"');
   process.exit(1);
 };
 
