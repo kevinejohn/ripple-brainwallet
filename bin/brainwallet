@@ -4,9 +4,9 @@ var brainwallet = require('../ripple-brainwallet');
 
 function printUsage() {
   console.log('Encrypt:');
-  console.log('  brainwallet encrypt snA9nTaLqey3odZDSTUYMTW5jXBmx');
+  console.log('  ripple-brainwallet encrypt snA9nTaLqey3odZDSTUYMTW5jXBmx');
   console.log('Decrypt:');
-  console.log('  brainwallet decrypt \"true completely happen mean window gift tremble girlfriend ugly victim finger release early prove bullet chin strain relationship\"');
+  console.log('  ripple-brainwallet decrypt \"true completely happen mean window gift tremble girlfriend ugly victim finger release early prove bullet chin strain relationship\"');
   process.exit(1);
 };
 
