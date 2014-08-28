@@ -1,13 +1,13 @@
 {
   "name": "ripple-brainwallet",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Brain wallet for Ripple secrets",
-  "main": "brainwallet.js",
+  "main": "ripple-brainwallet.js",
   "bin": {
-    "brainwallet": "./bin/brainwallet"
+    "ripple-brainwallet": "./bin/brainwallet"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec test/*-test.js"
+    "test": "mocha --reporter spec test/*-test.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,13 @@
   "homepage": "https://github.com/kevinejohn/ripple-brainwallet",
   "devDependencies": {
     "mocha": "~1.19.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "keywords": [
+    "ripple",
+    "brainwallet"
+  ]
 }

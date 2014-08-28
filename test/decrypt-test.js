@@ -1,5 +1,5 @@
 var assert = require('assert');
-var brainwallet = require('../brainwallet');
+var brainwallet = require('../ripple-brainwallet');
 
 describe('decrypt', function() {
   it('should decrypt', function(done) {

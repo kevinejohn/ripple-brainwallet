@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-var brainwallet = require('../brainwallet');
+var brainwallet = require('../ripple-brainwallet');
 
 function printUsage() {
   console.log('Encrypt:');
-  console.log('  bin/brainwallet encrypt snA9nTaLqey3odZDSTUYMTW5jXBmx');
+  console.log('  brainwallet encrypt snA9nTaLqey3odZDSTUYMTW5jXBmx');
   console.log('Decrypt:');
-  console.log('  bin/brainwallet decrypt \"true completely happen mean window gift tremble girlfriend ugly victim finger release early prove bullet chin strain relationship\"');
+  console.log('  brainwallet decrypt \"true completely happen mean window gift tremble girlfriend ugly victim finger release early prove bullet chin strain relationship\"');
   process.exit(1);
 };
 
